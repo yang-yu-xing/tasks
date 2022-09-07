@@ -15,9 +15,14 @@ function App(): JSX.Element {
             <Container>
                 <Row>
                     <Col>
+                        <div className="rectangle"></div>
                         <img src="./catdonut.jpg" alt="my favorite cat image" />
+                        <Button onClick={() => console.log("Hello World!")}>
+                            Log Hello World
+                        </Button>
                     </Col>
                     <Col>
+                        <div className="rectangle"></div>
                         <h1>Favorite Foods</h1>
                         <ul>
                             <li>Ramen</li>
@@ -27,9 +32,6 @@ function App(): JSX.Element {
                     </Col>
                 </Row>
             </Container>
-            <Button onClick={() => console.log("Hello World!")}>
-                Log Hello World
-            </Button>
         </div>
     );
 }
