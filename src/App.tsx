@@ -16,7 +16,10 @@ function App(): JSX.Element {
                 <Row>
                     <Col>
                         <div className="rectangle"></div>
-                        <img src="./catdonut.jpg" alt="my favorite cat image" />
+                        <img
+                            src="https://img.freepik.com/free-vector/ramen-noodle-egg-meat-with-chopstick-cartoon_138676-2543.jpg"
+                            alt="Noodles!"
+                        />
                         <Button onClick={() => console.log("Hello World!")}>
                             Log Hello World
                         </Button>
