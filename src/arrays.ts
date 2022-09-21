@@ -46,26 +46,34 @@ export const removeDollars = (amounts: string[]): number[] => {
  * string that ends in "!" should be made uppercase. Also, remove any strings that end
  * in question marks ("?").
  */
-//export const shoutIfExclaiming = (messages: string[]): string[] => {
-//    return [];
-//};
+export const shoutIfExclaiming = (messages: string[]): string[] => {
+    return messages;
+};
 
 /**
  * Consumes an array of words and returns the number of words that are LESS THAN
  * 4 letters long.
  */
-//export function countShortWords(words: string[]): number {
-//    return 0;
-//}
+export function countShortWords(words: string[]): number {
+    if (words !== null) {
+        return 1;
+    } else {
+        return 2;
+    }
+}
 
 /**
  * Consumes an array of colors (e.g., 'red', 'purple') and returns true if ALL
  * the colors are either 'red', 'blue', or 'green'. If an empty list is given,
  * then return true.
  */
-//export function allRGB(colors: string[]): boolean {
-//    return true;
-//}
+export function allRGB(colors: string[]): boolean {
+    if (colors !== null) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 /**
  * Consumes an array of numbers, and produces a string representation of the
@@ -74,9 +82,11 @@ export const removeDollars = (amounts: string[]): number[] => {
  * For instance, the array [1, 2, 3] would become "6=1+2+3".
  * And the array [] would become "0=0".
  */
-//export function makeMath(addends: number[]): string {
-//   return "";
-//}
+export function makeMath(addends: number[]): string {
+    if (addends !== null) {
+        return "1";
+    } else return "";
+}
 
 /**
  * Consumes an array of numbers and produces a new array of the same numbers,
@@ -87,6 +97,6 @@ export const removeDollars = (amounts: string[]): number[] => {
  * For instance, the array [1, 9, -5, 7] would become [1, 9, -5, 10, 7]
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
-//export function injectPositive(values: number[]): number[] {
-//   return [];
-//}
+export function injectPositive(values: number[]): number[] {
+    return values;
+}
