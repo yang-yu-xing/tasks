@@ -1,7 +1,7 @@
 import { idText } from "typescript";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
-import { makeBlankQuestion } from "./objects";
+import { duplicateQuestion, makeBlankQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -158,11 +158,9 @@ export function addNewQuestion(
     name: string,
     type: QuestionType
 ): Question[] {
-    return questions.splice(
-        questions.length + 1,
-        0,
-        makeBlankQuestion(id, name, type)
-    );
+    const jonathan = [...questions];
+    jonathan.splice(questions.length, 0, makeBlankQuestion(id, name, type));
+    return jonathan;
 }
 
 /***
@@ -175,7 +173,9 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    return [];
+    return questions.map((questions: Question) =>
+        questions.id === targetId ? { ...questions, name: newName } : questions
+    );
 }
 
 /***
@@ -190,7 +190,14 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    return [];
+    const num = questions.findIndex(
+        (questions: Question) => questions.id === targetId
+    );
+    const que = questions[num];
+    const option = que.type === newQuestionType ? [...que.options] : [];
+    const q = { ...que, type: newQuestionType, options: [...option] };
+    const q2 = questions.map((qq) => (qq === que ? q : qq));
+    return q2;
 }
 
 /**
@@ -209,7 +216,22 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    return [];
+    const num: number = questions.findIndex(
+        (questions: Question): boolean => questions.id === targetId
+    );
+    let q: Question = {
+        ...questions[num],
+        options: [...questions[num].options]
+    };
+    if (targetOptionIndex === -1) {
+        q = { ...q, options: [...q.options, newOption] };
+    } else {
+        const o: string[] = [...q.options];
+        o.splice(targetOptionIndex, 1, newOption);
+        q = { ...q, options: o };
+    }
+    const q2 = questions.map((qq) => (qq.id === targetId ? q : qq));
+    return q2;
 }
 
 /***
@@ -223,5 +245,11 @@ export function duplicateQuestionInArray(
     targetId: number,
     newId: number
 ): Question[] {
-    return [];
+    const q = [...questions];
+    const num = questions.findIndex(
+        (questions: Question) => questions.id === targetId
+    );
+    const q2: Question = duplicateQuestion(newId, questions[num]);
+    q.splice(num + 1, 0, q2);
+    return q;
 }
