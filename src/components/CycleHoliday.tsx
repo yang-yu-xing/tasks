@@ -45,7 +45,7 @@ export function CycleHoliday(): JSX.Element {
                 {Holiday === "Halloween" ? (
                     <span>Holiday: 🎃</span>
                 ) : Holiday === "New_Year" ? (
-                    <span>Holiday: 🎄</span>
+                    <span>Holiday: 🎆</span>
                 ) : Holiday === "Chinese_New_Year" ? (
                     <span>Holiday: 🐲</span>
                 ) : Holiday === "Thanksgiving" ? (
