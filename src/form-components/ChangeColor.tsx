@@ -32,6 +32,7 @@ export function ChangeColor(): JSX.Element {
                         value={color}
                         label={color}
                         onChange={updateColor}
+                        style={{ backgroundColor: color }}
                     />
                 </>
             ))}
