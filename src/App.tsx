@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { ShowHideTasks } from "./quizzer/Quizzer";
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
 import { StartAttempt } from "./components/StartAttempt";
@@ -57,6 +58,8 @@ function App(): JSX.Element {
             <ChangeType></ChangeType>
             <hr />
             <CycleHoliday></CycleHoliday>
+            <hr></hr>
+            <ShowHideTasks></ShowHideTasks>
         </div>
     );
 }
