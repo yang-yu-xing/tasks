@@ -51,33 +51,6 @@ PASS src/bad-components/ColoredBox.test.tsx
 PASS src/bad-components/ShoveBox.test.tsx
 PASS src/quizzer/Quizzer.test.tsx
 PASS src/App.test.tsx
-  ● Console
-
-    console.error
-      Warning: Each child in a list should have a unique "key" prop.
-      
-      Check the render method of `ChangeColor`. See https://reactjs.org/link/warning-keys for more information.
-          at ChangeColor (/home/runner/work/tasks/tasks/src/form-components/ChangeColor.tsx:16:31)
-          at div
-          at App
-
-      21 |
-      22 |     return (
-    > 23 |         <div>
-         |         ^
-      24 |             <h3>Change Color</h3>
-      25 |             {COLORS.map((color: string) => (
-      26 |                 <>
-
-      at printWarning (node_modules/react/cjs/react-jsx-dev-runtime.development.js:117:30)
-      at error (node_modules/react/cjs/react-jsx-dev-runtime.development.js:93:5)
-      at validateExplicitKey (node_modules/react/cjs/react-jsx-dev-runtime.development.js:986:5)
-      at validateChildKeys (node_modules/react/cjs/react-jsx-dev-runtime.development.js:1013:11)
-      at jsxWithValidation (node_modules/react/cjs/react-jsx-dev-runtime.development.js:1174:15)
-      at ChangeColor (src/form-components/ChangeColor.tsx:23:9)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
-      at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17811:13)
-
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
@@ -116,5 +89,5 @@ All files                    |   98.71 |    91.91 |   99.23 |   98.63 |
 Test Suites: 21 passed, 21 total
 Tests:       135 passed, 135 total
 Snapshots:   0 total
-Time:        15.372 s
+Time:        18.372 s
 Ran all test suites.
